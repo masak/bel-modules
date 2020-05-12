@@ -1,0 +1,9 @@
+(form snarf ((e) a s r (p g))
+  (let d (table (drain g [id _ e]))
+    (mev s (cons d r) (p g))))
+
+(mac import (name . body)
+  `(let g globe
+     (load name)
+     (snarf g)))
+
