@@ -2,8 +2,13 @@
   (let d (table (drain g [id _ e]))
     (mev s (cons d r) (p g))))
 
+(set belext "bel")
+
+(def modulefile (name|symbol)
+  (append (nom name) "." belext))
+
 (mac import (name . body)
   `(let g globe
-     (load (append (nom name) ".bel"))
+     (load (modulefile name))
      (snarf g)))
 
