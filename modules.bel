@@ -4,6 +4,6 @@
 
 (mac import (name . body)
   `(let g globe
-     (load name)
+     (load (sym name))
      (snarf g)))
 
