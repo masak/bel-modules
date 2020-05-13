@@ -4,6 +4,6 @@
 
 (mac import (name . body)
   `(let g globe
-     (load (sym name))
+     (load (append (nom name) ".bel"))
      (snarf g)))
 
