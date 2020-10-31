@@ -25,8 +25,9 @@ The operative word, **pristine**, is defined so that all of the Bel "extension p
 * Templates/`templates`
 * Buffers/`cbuf`/`bbuf`
 
-I might have missed some.
+(I might have missed some.)
 
-The main point is that the module file should be able to assume that no external script or module file has messed with its environment, that it's pristine.
+Summarizing this, from the point of view of the module loader executing the module, it's as if a global _reset_ to the environment has taken place.
+This reset needs to be rolled back after module execution has finished, such that the "caller" module also notices no adverse effects in its environment.
 
-Of course, the export mechanism should then be capable enough so that if you want to export changes to any of the above, you can.
+Of course, the export mechanism should then be capable enough so that if you _want_ to unyhgienically affect your caller, you can.
