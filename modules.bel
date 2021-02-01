@@ -1,5 +1,6 @@
 (form snarf ((e) a s r (p g))
-  (let d (table (drain g [id _ e]))
+  (let d (table (accum take (while (~id g e)
+                                   (take (pop g)))))
     (mev s (cons d r) (p g))))
 
 (set belext "bel")
